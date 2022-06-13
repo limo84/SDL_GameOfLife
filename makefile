@@ -1,4 +1,7 @@
 SOURCES := $(shell find . -name "*.c")
 
-all: $(SOURCES)
-	gcc $(SOURCES) -o app -lSDL2 -lSDL2_image
+run:
+	make app && ./app
+
+app: $(SOURCES)
+	gcc $(SOURCES) -o app -std=c17 -Wall -lSDL2 -lSDL2_image
