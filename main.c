@@ -29,27 +29,6 @@ int main() {
       grid[i][j] = 0;
     }
   }
-  // grid[1][1] = 1;
-  // grid[1][2] = 1;
-  // grid[2][1] = 1;
-  // grid[2][2] = 1;
-
-  // grid[5][2] = 1;
-  // grid[5][3] = 1;
-  // grid[5][4] = 1;
-  // grid[5][5] = 1;
-
-  // grid[10][1] = 1;
-  // grid[10][2] = 1;
-  // grid[10][3] = 1;
-  // grid[10][4] = 1;
-  // grid[11][5] = 1;
-
-  // grid[23][30] = 1;
-  // grid[23][31] = 1;
-  // grid[23][32] = 1;
-  // grid[23][33] = 1;
-  // grid[23][34] = 1;
   SDL_Event event;
   SDL_bool isRunning = 1;
 
@@ -83,7 +62,7 @@ int main() {
   int b = SDL_GetTicks();
   while (isRunning) {
     processEvents(&event, &isRunning, &button_src, &button_dst);
-    if (delta >= 16) {
+    if (delta >= 50) {
       // printf("delta: %i\n", delta);
       if (!isPaused) {
         processNextStep();
@@ -105,7 +84,7 @@ int main() {
 void processEvents(SDL_Event *event, SDL_bool *isRunning, SDL_Rect *button_src,
                    SDL_Rect *button_dst) {
   SDL_PollEvent(event);
-  switch ((*event).type) {
+  switch (event->type) {
   case SDL_QUIT:
     *isRunning = 0;
     break;
@@ -141,7 +120,7 @@ void processEvents(SDL_Event *event, SDL_bool *isRunning, SDL_Rect *button_src,
       int row = event->button.y / 25;
       int col = event->button.x / 25;
       grid[row][col] = 0;
-      // printf("col: %i, row: %i\n", col, row);
+      printf("col: %i, row: %i\n", col, row);
     }
   }
 
