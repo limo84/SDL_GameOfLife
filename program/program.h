@@ -5,7 +5,8 @@
 #include <SDL2/SDL_render.h>
 #include <SDL2/SDL_stdinc.h>
 
-typedef struct Program {
+typedef struct Program
+{
   SDL_Window *window;
   SDL_Renderer *renderer;
   SDL_Event event;

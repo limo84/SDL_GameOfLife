@@ -1,6 +1,7 @@
 #include "program/program.h"
 
-int main() {
+int main()
+{
   Program_Run();
   return 0;
 }
