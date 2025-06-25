@@ -1,4 +1,4 @@
-SOURCES := $(shell find . -name "*.c")
+SOURCES := gol.c
 
 run:
 	make app && ./app
